@@ -14,7 +14,7 @@ import { title } from '@/components/primitives'
 
 export default function LeaderboardPage() {
     return (
-        <div>
+        <>
             <h1 className={title()}>Leaderboard</h1>
             <Table aria-label='Player statistics table' selectionMode='single'>
                 <TableHeader>
@@ -858,6 +858,6 @@ export default function LeaderboardPage() {
                     </TableRow>
                 </TableBody>
             </Table>
-        </div>
+        </>
     )
 }

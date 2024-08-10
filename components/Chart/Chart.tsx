@@ -1,12 +1,25 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts'
+import { io } from 'socket.io-client'
 
 import { generateArray } from './Chart.helper'
 
 export const Chart = () => {
-    const [coordinateX, setCoordinateX] = useState<number>(1.5)
+    const [coordinateX, setCoordinateX] = useState<number>(10)
+
+    useEffect(() => {
+        const socket = io('http://localhost:3001')
+
+        socket.on('numberUpdate', (number: number) => {
+            setCoordinateX(number)
+        })
+
+        return () => {
+            socket.disconnect()
+        }
+    }, [])
 
     const data = generateArray(coordinateX)
 
@@ -18,16 +31,15 @@ export const Chart = () => {
             >
                 <XAxis
                     dataKey='x'
-                    padding={{ left: 0, right: 0 }} // Add this line to adjust the padding
                     scale='point'
-                    tickMargin={10} // Optional: Adjust tick margin if needed
-                    ticks={[1, 1.5, 2]}
+                    tickMargin={10}
+                    ticks={[1, 2, 4, 8, 32, 64]}
                 />
                 <YAxis
                     domain={[0, 4]}
-                    tickMargin={5} // Adjust tick margin if needed
+                    tickMargin={5}
                     ticks={[2, 4]}
-                    width={30} // Adjust width to make it fit better if needed
+                    width={30}
                 />
                 <Line
                     dataKey='y'
@@ -37,14 +49,14 @@ export const Chart = () => {
                     strokeWidth={3}
                     type='monotone'
                 />
-                <Line
+                {/* <Line
                     dataKey='invisible'
                     dot={false}
                     isAnimationActive={false}
                     stroke='none'
                     strokeWidth={0}
                     type='monotone'
-                />
+                /> */}
                 <text
                     dominantBaseline='middle'
                     fill='white'

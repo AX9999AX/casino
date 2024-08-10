@@ -1,6 +1,6 @@
 import { chatMock } from './chat.mock'
 
-let currentChat: { user: string; message: string }[] = []
+let currentChat: { user: string; message: string; timestamp: string }[] = []
 
 export const getChat = () => {
     return currentChat
@@ -10,7 +10,9 @@ const addRandomMessage = () => {
     const randomIndex = Math.floor(Math.random() * chatMock.length)
     const randomMessage = chatMock[randomIndex]
 
-    currentChat.push(randomMessage)
+    const timestamp = new Date().toLocaleTimeString()
+
+    currentChat.push({ ...randomMessage, timestamp: timestamp })
 
     if (currentChat.length > 40) {
         currentChat.shift()

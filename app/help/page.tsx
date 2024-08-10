@@ -6,7 +6,7 @@ import { title } from '@/components/primitives'
 
 export default function HelpPage() {
     return (
-        <div>
+        <>
             <h1 className={title()}>Help</h1>
             <Accordion selectionMode='multiple' variant='shadow'>
                 <AccordionItem
@@ -348,6 +348,6 @@ export default function HelpPage() {
                     time, so investors can invest and divest whenever they like.
                 </AccordionItem>
             </Accordion>
-        </div>
+        </>
     )
 }
