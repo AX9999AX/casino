@@ -8,16 +8,14 @@ import {
     NavbarMenuItem
 } from '@nextui-org/navbar'
 import { Button } from '@nextui-org/button'
-import { Kbd } from '@nextui-org/kbd'
 import { Link } from '@nextui-org/link'
-import { Input } from '@nextui-org/input'
 import { link as linkStyles } from '@nextui-org/theme'
 import NextLink from 'next/link'
 import clsx from 'clsx'
 import Image from 'next/image'
 
 import { siteConfig } from '@/config/site'
-import { HeartFilledIcon, SearchIcon } from '@/components/icons'
+import { HeartFilledIcon } from '@/components/icons'
 
 export const Navbar = () => {
     return (
