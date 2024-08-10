@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server'
 
-import { getCounter } from './chat'
+import { getChat } from './chat'
 
 export async function GET() {
-    const currentCount = getCounter()
+    const currentCount = getChat()
 
-    return NextResponse.json({ count: currentCount })
+    return NextResponse.json(currentCount)
 }

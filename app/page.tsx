@@ -12,11 +12,16 @@ import {
 import { Tab, Tabs } from '@nextui-org/tabs'
 
 import Chat from '@/components/Chat/Chat'
+import { Chart } from '@/components/Chart/Chart'
+import Players from '@/components/Players/Players'
 
 export default function Home() {
     return (
         <section className='grid grid-cols-12 gap-4 py-8 md:py-10'>
             <div className='col-span-12 lg:col-span-8'>
+                <div className='flex w-full flex-col'>
+                    <Chart />
+                </div>
                 <div className='flex w-full flex-col'>
                     <Tabs aria-label='Options'>
                         <Tab key='chat' title='Chat'>
@@ -85,7 +90,9 @@ export default function Home() {
                     </Tabs>
                 </div>
             </div>
-            <div className='col-span-12 lg:col-span-4'>4 columns</div>
+            <div className='col-span-12 lg:col-span-4'>
+                <Players />
+            </div>
         </section>
     )
 }

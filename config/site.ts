@@ -28,36 +28,24 @@ export const siteConfig = {
     ],
     navMenuItems: [
         {
-            label: 'Profile',
-            href: '/profile'
+            label: 'Bankroll',
+            href: '/bankroll'
         },
         {
-            label: 'Dashboard',
-            href: '/dashboard'
+            label: 'Backtesting',
+            href: '/backtesting'
         },
         {
-            label: 'Projects',
-            href: '/projects'
+            label: 'Stats',
+            href: '/stats'
         },
         {
-            label: 'Team',
-            href: '/team'
+            label: 'Leaderboard',
+            href: '/leaderboard'
         },
         {
-            label: 'Calendar',
-            href: '/calendar'
-        },
-        {
-            label: 'Settings',
-            href: '/settings'
-        },
-        {
-            label: 'Help & Feedback',
-            href: '/help-feedback'
-        },
-        {
-            label: 'Logout',
-            href: '/logout'
+            label: 'Help',
+            href: '/help'
         }
     ],
     links: {

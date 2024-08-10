@@ -14,32 +14,12 @@ import { Input } from '@nextui-org/input'
 import { link as linkStyles } from '@nextui-org/theme'
 import NextLink from 'next/link'
 import clsx from 'clsx'
+import Image from 'next/image'
 
 import { siteConfig } from '@/config/site'
-import { HeartFilledIcon, SearchIcon, Logo } from '@/components/icons'
+import { HeartFilledIcon, SearchIcon } from '@/components/icons'
 
 export const Navbar = () => {
-    const searchInput = (
-        <Input
-            aria-label='Search'
-            classNames={{
-                inputWrapper: 'bg-default-100',
-                input: 'text-sm'
-            }}
-            endContent={
-                <Kbd className='hidden lg:inline-block' keys={['command']}>
-                    K
-                </Kbd>
-            }
-            labelPlacement='outside'
-            placeholder='Search...'
-            startContent={
-                <SearchIcon className='text-base text-default-400 pointer-events-none flex-shrink-0' />
-            }
-            type='search'
-        />
-    )
-
     return (
         <NextUINavbar maxWidth='xl' position='sticky'>
             <NavbarContent className='basis-1/5 sm:basis-full' justify='start'>
@@ -48,7 +28,12 @@ export const Navbar = () => {
                         className='flex justify-start items-center gap-1'
                         href='/'
                     >
-                        <Logo />
+                        <Image
+                            alt='Logo'
+                            height={40}
+                            src='/logo.png'
+                            width={40}
+                        />
                         <p className='font-bold text-inherit'>Bustabit</p>
                     </NextLink>
                 </NavbarBrand>
@@ -95,7 +80,6 @@ export const Navbar = () => {
             </NavbarContent>
 
             <NavbarMenu>
-                {searchInput}
                 <div className='mx-4 mt-2 flex flex-col gap-2'>
                     {siteConfig.navMenuItems.map((item, index) => (
                         <NavbarMenuItem key={`${item}-${index}`}>
