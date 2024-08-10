@@ -13,9 +13,9 @@ import { link as linkStyles } from '@nextui-org/theme'
 import NextLink from 'next/link'
 import clsx from 'clsx'
 import Image from 'next/image'
+import { GiPlagueDoctorProfile } from 'react-icons/gi'
 
 import { siteConfig } from '@/config/site'
-import { HeartFilledIcon } from '@/components/icons'
 
 export const Navbar = () => {
     return (
@@ -32,7 +32,9 @@ export const Navbar = () => {
                             src='/logo.png'
                             width={40}
                         />
-                        <p className='font-bold text-inherit'>Bustabit</p>
+                        <p className='font-bold text-orange text-2xl ml-2'>
+                            Bustabit
+                        </p>
                     </NextLink>
                 </NavbarBrand>
                 <ul className='hidden lg:flex gap-4 justify-start ml-2'>
@@ -41,9 +43,8 @@ export const Navbar = () => {
                             <NextLink
                                 className={clsx(
                                     linkStyles({ color: 'foreground' }),
-                                    'data-[active=true]:text-primary data-[active=true]:font-medium'
+                                    'data-[active=true]:text-orange data-[active=true]:font-medium'
                                 )}
-                                color='foreground'
                                 href={item.href}
                             >
                                 {item.label}
@@ -62,10 +63,7 @@ export const Navbar = () => {
                         isExternal
                         as={Link}
                         className='text-sm font-normal text-default-600 bg-default-100'
-                        href={siteConfig.links.sponsor}
-                        startContent={
-                            <HeartFilledIcon className='text-danger' />
-                        }
+                        startContent={<GiPlagueDoctorProfile />}
                         variant='flat'
                     >
                         Login/Register

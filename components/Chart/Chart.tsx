@@ -11,10 +11,24 @@ export const Chart = () => {
     const data = generateArray(coordinateX)
 
     return (
-        <ResponsiveContainer height={300} width='100%'>
-            <LineChart data={data}>
-                <XAxis dataKey='x' ticks={[1, 1.5, 2]} />
-                <YAxis domain={[0, 4]} ticks={[2, 4]} />
+        <ResponsiveContainer height={220} width='100%'>
+            <LineChart
+                data={data}
+                margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
+            >
+                <XAxis
+                    dataKey='x'
+                    padding={{ left: 0, right: 0 }} // Add this line to adjust the padding
+                    scale='point'
+                    tickMargin={10} // Optional: Adjust tick margin if needed
+                    ticks={[1, 1.5, 2]}
+                />
+                <YAxis
+                    domain={[0, 4]}
+                    tickMargin={5} // Adjust tick margin if needed
+                    ticks={[2, 4]}
+                    width={30} // Adjust width to make it fit better if needed
+                />
                 <Line
                     dataKey='y'
                     dot={false}

@@ -8,8 +8,14 @@ module.exports = {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        orange: {
+          DEFAULT: '#e58929'
+        }
+      },
+    },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [nextui(), require('tailwind-scrollbar')],
 }

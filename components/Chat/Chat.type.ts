@@ -1,5 +1,5 @@
 export interface IMessage {
-    nickName: string
+    user: string
     timestamp: string
     message: string
 }

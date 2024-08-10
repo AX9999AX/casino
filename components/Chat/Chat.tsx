@@ -13,22 +13,16 @@ export default function Chat() {
     })
 
     return (
-        <ul className='min-h-40p max-h-40p w-full col-span-12 bg-charcoal scrollbar-thin scrollbar-thumb-sky-700 scrollbar-track-sky-300 overflow-auto'>
+        <ul className='w-full min-h-64 max-h-64 scrollbar-thin scrollbar-thumb-orange scrollbar-track-sky-300 overflow-auto'>
             {data?.map((message) => {
                 return (
                     <li
-                        key={
-                            message.message +
-                            message.nickName +
-                            message.timestamp
-                        }
+                        key={message.message + message.user + message.timestamp}
                         className='flex flex-wrap items-center'
                     >
-                        <div className='text-xs text-gray-dark px-1'>
-                            {message.timestamp}
-                        </div>
-                        <div className='text-sm text-yellow-light pr-1'>
-                            {message.nickName}
+                        <div className='text-xs px-1'>{message.timestamp}</div>
+                        <div className='text-sm text-orange pr-1'>
+                            {message.user}:
                         </div>
                         <div className='text-sm text-white'>
                             {message.message}
