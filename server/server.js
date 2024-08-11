@@ -14,6 +14,10 @@ const io = new Server(httpServer, {
     }
 })
 
+const STATUS_IN_GAME = 'IN_GAME'
+const STATUS_LOST = 'LOST'
+const STATUS_WIN = 'WIN"'
+
 let history = []
 
 let players = []
@@ -36,29 +40,56 @@ const updateHistory = () => {
 }
 
 const updatePlayers = () => {
-    players = []
-    io.emit('players', players)
     for (let i = 0; i < 15; i++) {
-        setTimeout(() => {
-            players.push({
-                user: 'player' + i,
-                bust: '-',
-                bet: i,
-                profit: '-'
-            })
-            io.emit('players', players)
-        }, i * 200)
+        setTimeout(
+            () => {
+                if (i === 0) {
+                    players = []
+                }
+                players.push({
+                    user: 'player' + i,
+                    bust: '-',
+                    bet: i,
+                    profit: '-',
+                    gameStatus: STATUS_IN_GAME
+                })
+                io.emit('players', players)
+            },
+            i * 200 + 2000
+        )
     }
+}
+
+const playersWin = () => {
+    for (let i = 0; i < 15; i++) {
+        if (players[i]?.gameStatus === STATUS_IN_GAME) {
+            if (Math.random() < 0.001) {
+                players[i].gameStatus = STATUS_WIN
+            }
+        }
+    }
+    io.emit('players', players)
+}
+
+const playersLost = () => {
+    for (let i = 0; i < 15; i++) {
+        if (players[i]?.gameStatus === STATUS_IN_GAME) {
+            players[i].gameStatus = STATUS_LOST
+        }
+    }
+    io.emit('players', players)
 }
 
 setInterval(() => {
     if (!isPaused) {
         currentMultiplier += 0.01
         io.emit('gameMultiplier', currentMultiplier)
+        playersWin()
 
         if (currentMultiplier >= gameMock[currentGameMockIndex].bust) {
             isPaused = true
             updateHistory()
+            playersLost()
             io.emit('history', history)
             currentGameMockIndex =
                 currentGameMockIndex >= MAX_HISTORY
@@ -76,6 +107,7 @@ setInterval(() => {
 io.on('connection', () => {
     io.emit('gameMultiplier', currentMultiplier)
     io.emit('history', history)
+    io.emit('players', players)
 })
 
 httpServer.listen(PORT, () => { })

@@ -11,7 +11,12 @@ import {
 import { useEffect, useState } from 'react'
 import { io } from 'socket.io-client'
 
-import { IPlayers } from './Players.type'
+import {
+    IPlayers,
+    STATUS_IN_GAME,
+    STATUS_LOST,
+    STATUS_WIN
+} from './Players.type'
 
 export default function Players() {
     const [players, setPlayers] = useState<IPlayers[]>([])
@@ -40,12 +45,38 @@ export default function Players() {
             </TableHeader>
             <TableBody>
                 {players?.map((player) => {
+                    const inGameCollor =
+                        player.gameStatus === STATUS_IN_GAME
+                            ? 'text-orange'
+                            : ''
+                    const lostColor =
+                        player.gameStatus === STATUS_LOST ? 'text-red-500' : ''
+
+                    const winCollor =
+                        player.gameStatus === STATUS_WIN ? 'text-green-500' : ''
+
                     return (
                         <TableRow key={player.user}>
-                            <TableCell>{player.user}</TableCell>
-                            <TableCell>{player.bust}</TableCell>
-                            <TableCell>{player.bet}</TableCell>
-                            <TableCell>{player.profit}</TableCell>
+                            <TableCell
+                                className={`${inGameCollor} ${lostColor} ${winCollor}`}
+                            >
+                                {player.user}
+                            </TableCell>
+                            <TableCell
+                                className={`${inGameCollor} ${lostColor} ${winCollor}`}
+                            >
+                                {player.bust}
+                            </TableCell>
+                            <TableCell
+                                className={`${inGameCollor} ${lostColor} ${winCollor}`}
+                            >
+                                {player.bet}
+                            </TableCell>
+                            <TableCell
+                                className={`${inGameCollor} ${lostColor} ${winCollor}`}
+                            >
+                                {player.profit}
+                            </TableCell>
                         </TableRow>
                     )
                 })}

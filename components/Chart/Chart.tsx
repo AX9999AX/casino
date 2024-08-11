@@ -6,12 +6,10 @@ import { io } from 'socket.io-client'
 
 import { generateArray } from './Chart.helper'
 
-import { BsBank } from 'react-icons/bs'
-
 export const Chart = () => {
     const [coordinateX, setCoordinateX] = useState<number>(0)
 
-    const ticks = useEffect(() => {
+    useEffect(() => {
         const socket = io('http://localhost:3001')
 
         socket.on('gameMultiplier', (number: number) => {
@@ -26,7 +24,7 @@ export const Chart = () => {
     const data = generateArray(coordinateX)
 
     return (
-        <ResponsiveContainer height={220} width='100%'>
+        <ResponsiveContainer className='min-h-40vh' width='100%'>
             <LineChart
                 data={data}
                 margin={{ top: 0, right: 40, left: 0, bottom: 10 }}
@@ -59,7 +57,7 @@ export const Chart = () => {
                     fill='white'
                     fontSize={42}
                     textAnchor='middle'
-                    x='50%'
+                    x='45%'
                     y='50%'
                 >
                     {coordinateX.toFixed(2)}x

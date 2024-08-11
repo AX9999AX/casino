@@ -13,7 +13,7 @@ export default function Chat() {
     })
 
     return (
-        <ul className='w-full min-h-64 max-h-64 scrollbar-thin scrollbar-thumb-orange scrollbar-track-sky-300 overflow-auto'>
+        <ul className='w-full min-h-35vh max-h-35vh scrollbar-thin scrollbar-thumb-orange scrollbar-track-gray-600 overflow-auto'>
             {data?.map((message) => {
                 return (
                     <li

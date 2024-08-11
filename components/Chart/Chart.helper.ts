@@ -5,11 +5,10 @@ type Point = {
 }
 
 export const generateArray = (maxValue: number): Point[] => {
-    const maxPoints = 200 // Maximum number of points
-    const step = maxValue / maxPoints > 0.01 ? maxValue / maxPoints : 0.01 // Dynamically calculate step
+    const maxPoints = 200
+    const step = maxValue / maxPoints > 0.01 ? maxValue / maxPoints : 0.01
     const result: Point[] = []
 
-    // Generate points
     for (let value = step + 1; value <= maxValue; value += step) {
         const roundedValue = parseFloat(value.toFixed(2))
         const calculatedY = Math.pow(roundedValue, 2)
@@ -20,10 +19,8 @@ export const generateArray = (maxValue: number): Point[] => {
         })
     }
 
-    // Generate the final point
-    if (result.length < maxPoints) {
-        const finalValue = maxValue + step // Use the calculated step for the last point
-        const roundedValue = parseFloat(finalValue.toFixed(2))
+    for (let value = maxValue; value <= maxValue + 1; value += step) {
+        const roundedValue = parseFloat(value.toFixed(2))
         const calculatedY = Math.pow(roundedValue, 2)
 
         result.push({
