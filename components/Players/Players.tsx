@@ -25,7 +25,7 @@ export default function Players() {
     const sortedPlayers = sortPlayers(players)
 
     useEffect(() => {
-        const socket = io('http://localhost:3001')
+        const socket = io(String(process.env.NEXT_PUBLIC_SOCKET_URL))
 
         socket.on('players', (playersData) => {
             setPlayers(playersData)
