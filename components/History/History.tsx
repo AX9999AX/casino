@@ -34,7 +34,7 @@ export default function History() {
         <Table
             removeWrapper
             aria-label='History table'
-            className='min-h-64 max-h-64 scrollbar-thin scrollbar-thumb-orange scrollbar-track-sky-300 overflow-auto'
+            className='min-h-35vh max-h-35vh scrollbar-thin scrollbar-thumb-orange scrollbar-track-gray-600 overflow-auto'
         >
             <TableHeader>
                 <TableColumn>BUST</TableColumn>

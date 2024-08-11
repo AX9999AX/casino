@@ -1,4 +1,7 @@
 import { BsBank } from 'react-icons/bs'
+import { IoStatsChart } from 'react-icons/io5'
+import { TbHelpSquareFilled } from 'react-icons/tb'
+import { RiDashboardHorizontalFill } from 'react-icons/ri'
 
 export type SiteConfig = typeof siteConfig
 
@@ -10,22 +13,22 @@ export const siteConfig = {
         {
             label: 'Bankroll',
             href: '/bankroll',
-            icon: () => <BsBank />
+            icon: () => <BsBank className='text-orange' />
         },
         {
             label: 'Stats',
             href: '/stats',
-            icon: () => <BsBank />
+            icon: () => <IoStatsChart className='text-orange' />
         },
         {
             label: 'Leaderboard',
             href: '/leaderboard',
-            icon: () => <BsBank />
+            icon: () => <RiDashboardHorizontalFill className='text-orange' />
         },
         {
             label: 'FAQ',
             href: '/help',
-            icon: () => <BsBank />
+            icon: () => <TbHelpSquareFilled className='text-orange' />
         }
     ],
     navMenuItems: [
