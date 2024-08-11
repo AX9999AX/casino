@@ -18,13 +18,12 @@ export default function History() {
 
     useEffect(() => {
         // Create a socket connection
-        const socket = io('http://38.180.111.142:3001') // Change this to your server URL
+        const socket = io(String(process.env.NEXT_PUBLIC_SOCKET_URL))
 
         socket.on('history', (historyData: IHistory[]) => {
             setHistory(historyData)
         })
 
-        // Clean up the socket connection on unmount
         return () => {
             socket.disconnect()
         }

@@ -9,7 +9,7 @@ export default function Chat() {
     const [messages, setMessages] = useState<IMessage[]>([])
 
     useEffect(() => {
-        const socket = io('http://localhost:3001')
+        const socket = io(String(process.env.NEXT_PUBLIC_SOCKET_URL))
 
         socket.on('chat', (chatData) => {
             setMessages(chatData)

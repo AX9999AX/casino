@@ -10,7 +10,7 @@ export const Chart = () => {
     const [coordinateX, setCoordinateX] = useState<number>(0)
 
     useEffect(() => {
-        const socket = io('http://localhost:3001')
+        const socket = io(String(process.env.NEXT_PUBLIC_SOCKET_URL))
 
         socket.on('gameMultiplier', (number: number) => {
             setCoordinateX(number)
