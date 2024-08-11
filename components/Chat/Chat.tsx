@@ -8,9 +8,13 @@ const fetcher = (url: string): Promise<IMessage[]> =>
     fetch(url).then((res) => res.json())
 
 export default function Chat() {
-    const { data } = useSWR<IMessage[]>('/api/chat', fetcher, {
-        refreshInterval: 1000
-    })
+    const { data } = useSWR<IMessage[]>(
+        'http://38.180.111.142:3000/api/chat',
+        fetcher,
+        {
+            refreshInterval: 1000
+        }
+    )
 
     return (
         <ul className='w-full min-h-35vh max-h-35vh scrollbar-thin scrollbar-thumb-orange scrollbar-track-gray-600 overflow-auto'>

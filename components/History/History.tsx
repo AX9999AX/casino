@@ -18,7 +18,7 @@ export default function History() {
 
     useEffect(() => {
         // Create a socket connection
-        const socket = io('http://localhost:3001') // Change this to your server URL
+        const socket = io('http://38.180.111.142:3001') // Change this to your server URL
 
         socket.on('history', (historyData: IHistory[]) => {
             setHistory(historyData)
