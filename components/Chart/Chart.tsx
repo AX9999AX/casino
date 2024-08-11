@@ -10,7 +10,7 @@ export const Chart = () => {
     const [coordinateX, setCoordinateX] = useState<number>(0)
 
     useEffect(() => {
-        const socket = io('http://38.180.111.142:3001')
+        const socket = io('http://localhost:3001')
 
         socket.on('gameMultiplier', (number: number) => {
             setCoordinateX(number)
@@ -29,19 +29,8 @@ export const Chart = () => {
                 data={data}
                 margin={{ top: 0, right: 40, left: 0, bottom: 10 }}
             >
-                <XAxis
-                    dataKey='x'
-                    domain={[1, 'dataMax']}
-                    tickCount={1}
-                    type='number'
-                />
-                <YAxis
-                    domain={[1, 2]}
-                    tick={false}
-                    tickMargin={0}
-                    type='number'
-                    width={30}
-                />
+                <XAxis dataKey='x' domain={[1, 'dataMax']} type='number' />
+                <YAxis domain={[1, 2]} type='number' />
                 <Line
                     dataKey='y'
                     dot={false}

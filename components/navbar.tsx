@@ -13,13 +13,13 @@ import { link as linkStyles } from '@nextui-org/theme'
 import NextLink from 'next/link'
 import clsx from 'clsx'
 import Image from 'next/image'
-import { GiPlagueDoctorProfile } from 'react-icons/gi'
+import { FaConnectdevelop } from 'react-icons/fa'
 
 import { siteConfig } from '@/config/site'
 
 export const Navbar = () => {
     return (
-        <NextUINavbar maxWidth='xl' position='sticky'>
+        <NextUINavbar maxWidth='full' position='sticky'>
             <NavbarContent className='basis-1/5 sm:basis-full' justify='start'>
                 <NavbarBrand as='li' className='gap-3 max-w-fit'>
                     <NextLink
@@ -64,10 +64,15 @@ export const Navbar = () => {
                         isExternal
                         as={Link}
                         className='text-sm font-normal text-default-600 bg-default-100'
-                        startContent={<GiPlagueDoctorProfile />}
+                        startContent={
+                            <FaConnectdevelop
+                                className='text-orange'
+                                size={24}
+                            />
+                        }
                         variant='flat'
                     >
-                        Login/Register
+                        Connect Wallet
                     </Button>
                 </NavbarItem>
             </NavbarContent>

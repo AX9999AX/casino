@@ -3,6 +3,7 @@ import http from 'http'
 import { Server } from 'socket.io'
 
 import { gameMock } from './gameMock.js'
+import { chatMock } from './chatMock.js'
 
 const PORT = 3001
 
@@ -22,12 +23,40 @@ let history = []
 
 let players = []
 
+let currentChat = []
+
 const MAX_HISTORY = 20
 
 let currentMultiplier = 1.0
 let isPaused = false
 
 let currentGameMockIndex = 0
+
+
+const addRandomMessage = () => {
+    const randomIndex = Math.floor(Math.random() * chatMock.length)
+    const randomMessage = chatMock[randomIndex]
+
+    const timestamp = new Date().toLocaleTimeString()
+
+    currentChat.push({ ...randomMessage, timestamp: timestamp })
+
+    if (currentChat.length > 40) {
+        currentChat.shift()
+    }
+
+    io.emit('chat', currentChat)
+
+    scheduleRandomMessage()
+}
+
+const scheduleRandomMessage = () => {
+    const randomDelay = Math.floor(Math.random() * (10000 - 2000 + 1)) + 2000
+
+    setTimeout(addRandomMessage, randomDelay)
+}
+
+scheduleRandomMessage()
 
 const updateHistory = () => {
     if (history.length > MAX_HISTORY) {
@@ -108,6 +137,7 @@ io.on('connection', () => {
     io.emit('gameMultiplier', currentMultiplier)
     io.emit('history', history)
     io.emit('players', players)
+    io.emit('chat', currentChat)
 })
 
 httpServer.listen(PORT, () => { })

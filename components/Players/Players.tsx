@@ -25,14 +25,12 @@ export default function Players() {
     const sortedPlayers = sortPlayers(players)
 
     useEffect(() => {
-        // Create a socket connection
-        const socket = io('http://38.180.111.142:3001') // Change this to your server URL
+        const socket = io('http://localhost:3001')
 
         socket.on('players', (playersData) => {
             setPlayers(playersData)
         })
 
-        // Clean up the socket connection on unmount
         return () => {
             socket.disconnect()
         }

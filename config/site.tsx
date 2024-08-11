@@ -26,7 +26,7 @@ export const siteConfig = {
             icon: () => <RiDashboardHorizontalFill className='text-orange' />
         },
         {
-            label: 'FAQ',
+            label: 'Help',
             href: '/help',
             icon: () => <TbHelpSquareFilled className='text-orange' />
         }
