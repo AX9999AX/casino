@@ -6,13 +6,15 @@ import { io } from 'socket.io-client'
 
 import { generateArray } from './Chart.helper'
 
-export const Chart = () => {
-    const [coordinateX, setCoordinateX] = useState<number>(10)
+import { BsBank } from 'react-icons/bs'
 
-    useEffect(() => {
+export const Chart = () => {
+    const [coordinateX, setCoordinateX] = useState<number>(0)
+
+    const ticks = useEffect(() => {
         const socket = io('http://localhost:3001')
 
-        socket.on('numberUpdate', (number: number) => {
+        socket.on('gameMultiplier', (number: number) => {
             setCoordinateX(number)
         })
 
@@ -27,20 +29,15 @@ export const Chart = () => {
         <ResponsiveContainer height={220} width='100%'>
             <LineChart
                 data={data}
-                margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
+                margin={{ top: 0, right: 40, left: 0, bottom: 10 }}
             >
                 <XAxis
                     dataKey='x'
-                    scale='point'
-                    tickMargin={10}
-                    ticks={[1, 2, 4, 8, 32, 64]}
+                    domain={[1, 'dataMax']}
+                    tickCount={1}
+                    type='number'
                 />
-                <YAxis
-                    domain={[0, 4]}
-                    tickMargin={5}
-                    ticks={[2, 4]}
-                    width={30}
-                />
+                <YAxis domain={[1, 2]} tick={false} type='number' />
                 <Line
                     dataKey='y'
                     dot={false}
@@ -49,14 +46,14 @@ export const Chart = () => {
                     strokeWidth={3}
                     type='monotone'
                 />
-                {/* <Line
+                <Line
                     dataKey='invisible'
                     dot={false}
                     isAnimationActive={false}
-                    stroke='none'
+                    stroke='white'
                     strokeWidth={0}
                     type='monotone'
-                /> */}
+                />
                 <text
                     dominantBaseline='middle'
                     fill='white'

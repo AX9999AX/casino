@@ -1,3 +1,5 @@
+import { BsBank } from 'react-icons/bs'
+
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
@@ -7,33 +9,29 @@ export const siteConfig = {
     navItems: [
         {
             label: 'Bankroll',
-            href: '/bankroll'
-        },
-        {
-            label: 'Backtesting',
-            href: '/backtesting'
+            href: '/bankroll',
+            icon: () => <BsBank />
         },
         {
             label: 'Stats',
-            href: '/stats'
+            href: '/stats',
+            icon: () => <BsBank />
         },
         {
             label: 'Leaderboard',
-            href: '/leaderboard'
+            href: '/leaderboard',
+            icon: () => <BsBank />
         },
         {
-            label: 'Help',
-            href: '/help'
+            label: 'FAQ',
+            href: '/help',
+            icon: () => <BsBank />
         }
     ],
     navMenuItems: [
         {
             label: 'Bankroll',
             href: '/bankroll'
-        },
-        {
-            label: 'Backtesting',
-            href: '/backtesting'
         },
         {
             label: 'Stats',

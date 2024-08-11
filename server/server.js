@@ -2,6 +2,8 @@ import http from 'http'
 
 import { Server } from 'socket.io'
 
+import { gameMock } from './gameMock.js'
+
 const PORT = 3001
 
 const httpServer = http.createServer()
@@ -14,40 +16,66 @@ const io = new Server(httpServer, {
 
 let history = []
 
-let currentNumber = 0
+let players = []
+
+const MAX_HISTORY = 20
+
+let currentMultiplier = 1.0
 let isPaused = false
+
+let currentGameMockIndex = 0
+
+const updateHistory = () => {
+    if (history.length > MAX_HISTORY) {
+        history.shift()
+    }
+    history.push({
+        bust: gameMock[currentGameMockIndex].bust,
+        hash: gameMock[currentGameMockIndex].hash
+    })
+}
+
+const updatePlayers = () => {
+    players = []
+    io.emit('players', players)
+    for (let i = 0; i < 15; i++) {
+        setTimeout(() => {
+            players.push({
+                user: 'player' + i,
+                bust: '-',
+                bet: i,
+                profit: '-'
+            })
+            io.emit('players', players)
+        }, i * 200)
+    }
+}
 
 setInterval(() => {
     if (!isPaused) {
-        currentNumber += 0.1
-        io.emit('numberUpdate', currentNumber)
+        currentMultiplier += 0.01
+        io.emit('gameMultiplier', currentMultiplier)
 
-        if (currentNumber > 10) {
+        if (currentMultiplier >= gameMock[currentGameMockIndex].bust) {
             isPaused = true
-            history.push({ bust: currentNumber, hash: '8e873ac0d9167ab08b050601b0638eb324c842991e9e736747387c601edab551' })
-            if (history.length > 20) {
-                history.shift()
-            }
+            updateHistory()
             io.emit('history', history)
+            currentGameMockIndex =
+                currentGameMockIndex >= MAX_HISTORY
+                    ? 0
+                    : currentGameMockIndex + 1
+            updatePlayers()
             setTimeout(() => {
-                currentNumber = 0
+                currentMultiplier = 1.0
                 isPaused = false
             }, 5000)
         }
     }
-}, 30)
+}, 50)
 
-io.on('connection', (socket) => {
-    console.log('New client connected')
-    io.emit('numberUpdate', currentNumber)
+io.on('connection', () => {
+    io.emit('gameMultiplier', currentMultiplier)
     io.emit('history', history)
-
-
-    socket.on('disconnect', () => {
-        console.log('Client disconnected')
-    })
 })
 
-httpServer.listen(PORT, () => {
-    console.log(`WebSocket server is running on port ${PORT}`)
-})
+httpServer.listen(PORT, () => { })

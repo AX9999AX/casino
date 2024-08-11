@@ -47,6 +47,7 @@ export const Navbar = () => {
                                 )}
                                 href={item.href}
                             >
+                                <div className='mr-1'>{item.icon()}</div>
                                 {item.label}
                             </NextLink>
                         </NavbarItem>
