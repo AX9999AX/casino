@@ -21,3 +21,8 @@
     max-height: calc(((100vh - 96px) / 2) - 90px);
     min-height: calc(((100vh - 96px) / 2) - 90px);
 }
+
+.selection-option-chart-h {
+    max-height: calc(((100vh - 96px) / 2) - 130px);
+    min-height: calc(((100vh - 96px) / 2) - 130px);
+}

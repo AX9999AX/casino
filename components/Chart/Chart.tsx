@@ -8,7 +8,7 @@ import { GameData } from './Chart.type'
 
 export const Chart = () => {
     const [data, setData] = useState<GameData[]>([])
-    const [waitingTime, setWaitingTime] = useState<number>(5)
+    const [waitingTime, setWaitingTime] = useState<number>(10)
 
     useEffect(() => {
         const socket = io(String(process.env.NEXT_PUBLIC_SOCKET_URL))
@@ -43,7 +43,7 @@ export const Chart = () => {
                         strokeWidth={3}
                         type='monotone'
                     />
-                    {waitingTime < 4.9 ? (
+                    {waitingTime < 9.9 ? (
                         <text
                             dominantBaseline='middle'
                             fill='white'

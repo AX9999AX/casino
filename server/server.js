@@ -31,7 +31,7 @@ let currentMultiplier = -0.01
 let gameTime = -0.1
 let isPaused = false
 let interval = 100
-let waitingTime = 5
+let waitingTime = 10
 let x = 0
 
 let gameChartCoordinates = []
@@ -85,15 +85,70 @@ const gerRandomBet = () => {
     return values[randomIndex]
 }
 
+const generateRandomPlayerName = () => {
+    const parts = [
+        'aminam',
+        'Krish',
+        'Larlarlar',
+        'startanew',
+        'Uyen',
+        'ShambhoShivaShambho',
+        'M3ladik',
+        'vvk',
+        'Umiti',
+        'style',
+        'mercz',
+        'Topstar',
+        'Hiha',
+        'Nirmal',
+        'ryuji',
+        'SIRILALITHA',
+        'Starship',
+        'Jkkl',
+        'On',
+        'OPEN',
+        'Euler',
+        'HINAS',
+        'Shiva',
+        'Xw',
+        'M',
+        'Star',
+        'Melody',
+        'Sunshine',
+        'Whisper',
+        'Galaxy',
+        'Kirill999',
+        'ArmaniXXX',
+        'Hellboy',
+        'Paryys',
+        'Gragg11'
+    ]
+
+    return parts[Math.floor(Math.random() * parts.length)];
+}
+
+const generateUniquePlayerName = (existingPlayers) => {
+    let name
+
+    do {
+        name = generateRandomPlayerName()
+    } while (existingPlayers.some((player) => player.user === name))
+
+    return name
+}
+
 const updatePlayers = () => {
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < Math.floor(Math.random() * 11) + 12; i++) {
         setTimeout(
             () => {
                 if (i === 0) {
                     players = []
                 }
+
+                const uniqueName = generateUniquePlayerName(players)
+
                 players.push({
-                    user: 'player' + i,
+                    user: uniqueName,
                     bust: '-',
                     bet: gerRandomBet(),
                     profit: '-',
@@ -107,7 +162,7 @@ const updatePlayers = () => {
 }
 
 const playersWin = () => {
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < players.length; i++) {
         if (players[i]?.gameStatus === STATUS_IN_GAME) {
             if (Math.random() < 0.001 && x > 1) {
                 players[i].gameStatus = STATUS_WIN
@@ -120,7 +175,7 @@ const playersWin = () => {
 }
 
 const playersLost = () => {
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < players.length; i++) {
         if (players[i]?.gameStatus === STATUS_IN_GAME) {
             players[i].gameStatus = STATUS_LOST
         }
@@ -148,7 +203,7 @@ const waitingForNewGame = () => {
             currentGameMockIndex = 0
         }
         x = 0
-        waitingTime = 5
+        waitingTime = 10
         setTimeout(gameLoop, interval)
     } else {
         setTimeout(waitingForNewGame, 100)

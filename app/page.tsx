@@ -10,6 +10,7 @@ import Chat from '@/components/Chat/Chat'
 import { Chart } from '@/components/Chart/Chart'
 import Players from '@/components/Players/Players'
 import History from '@/components/History/History'
+import HistoryCompact from '@/components/HistoryCompact/HistoryCompact'
 
 export default function Home() {
     return (
@@ -21,13 +22,7 @@ export default function Home() {
                             Max profit: ₿7.77
                         </div>
                         <Chart />
-                        <div className='flex justify-around px-2 py-1'>
-                            <div>1.52x</div>
-                            <div>5.37x</div>
-                            <div>2.47x</div>
-                            <div>1x</div>
-                            <div>7.93x</div>
-                        </div>
+                        <HistoryCompact />
                     </Card>
                     <Card className='col-span-12 lg:col-span-6'>
                         <CardBody className='flex justify-center'>
