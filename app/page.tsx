@@ -24,7 +24,7 @@ export default function Home() {
                         <Chart />
                         <HistoryCompact />
                     </Card>
-                    <Card className='col-span-12 lg:col-span-6'>
+                    <Card className='hidden col-span-12 lg:col-span-6 lg:flex'>
                         <CardBody className='flex justify-center'>
                             <Button
                                 isExternal
