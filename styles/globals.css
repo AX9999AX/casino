@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.players-h {
+    max-height: calc(100vh - 92px);
+    min-height: calc(100vh - 92px);
+}
+
+.chart-section-h {
+    max-height: calc((100vh - 96px) / 2);
+    min-height: calc((100vh - 96px) / 2);
+}
+
+.chart-h {
+    max-height: calc(((100vh - 96px) / 2) - 64px);
+    min-height: calc(((100vh - 96px) / 2) - 64px);
+}
+
+.selection-option-h {
+    max-height: calc(((100vh - 96px) / 2) - 90px);
+    min-height: calc(((100vh - 96px) / 2) - 90px);
+}

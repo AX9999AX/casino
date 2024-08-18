@@ -17,7 +17,6 @@ export default function History() {
     const [history, setHistory] = useState<IHistory[]>([])
 
     useEffect(() => {
-        // Create a socket connection
         const socket = io(String(process.env.NEXT_PUBLIC_SOCKET_URL))
 
         socket.on('history', (historyData: IHistory[]) => {
@@ -33,7 +32,7 @@ export default function History() {
         <Table
             removeWrapper
             aria-label='History table'
-            className='min-h-35vh max-h-35vh scrollbar-thin scrollbar-thumb-orange scrollbar-track-gray-600 overflow-auto'
+            className='selection-option-h scrollbar-thin scrollbar-thumb-orange scrollbar-track-gray-600 overflow-auto'
         >
             <TableHeader>
                 <TableColumn>BUST</TableColumn>
@@ -43,25 +42,28 @@ export default function History() {
                 <TableColumn>HASH</TableColumn>
             </TableHeader>
             <TableBody>
-                {history?.map((historyItem, index) => {
-                    return (
-                        <TableRow key={index}>
-                            <TableCell
-                                className={
-                                    historyItem.bust > 2
-                                        ? 'text-green-600'
-                                        : 'text-red-600'
-                                }
-                            >
-                                {historyItem.bust.toFixed(2)}x
-                            </TableCell>
-                            <TableCell>-</TableCell>
-                            <TableCell>-</TableCell>
-                            <TableCell>-</TableCell>
-                            <TableCell>{historyItem.hash}</TableCell>
-                        </TableRow>
-                    )
-                })}
+                {history
+                    ?.slice()
+                    .reverse()
+                    .map((historyItem) => {
+                        return (
+                            <TableRow key={historyItem.hash}>
+                                <TableCell
+                                    className={
+                                        historyItem.bust > 2
+                                            ? 'text-green-600'
+                                            : 'text-red-600'
+                                    }
+                                >
+                                    {historyItem.bust.toFixed(2)}x
+                                </TableCell>
+                                <TableCell>-</TableCell>
+                                <TableCell>-</TableCell>
+                                <TableCell>-</TableCell>
+                                <TableCell>{historyItem.hash}</TableCell>
+                            </TableRow>
+                        )
+                    })}
             </TableBody>
         </Table>
     )

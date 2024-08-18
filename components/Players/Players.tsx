@@ -8,7 +8,7 @@ import {
     TableHeader,
     TableRow
 } from '@nextui-org/table'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { io } from 'socket.io-client'
 
 import {
@@ -36,52 +36,79 @@ export default function Players() {
         }
     }, [])
 
+    const calculateBets = () => {
+        return players.reduce((acc, player) => {
+            return acc + parseFloat(player.bet)
+        }, 0)
+    }
+
     return (
-        <Table removeWrapper aria-label='User Bets Table'>
-            <TableHeader>
-                <TableColumn>User</TableColumn>
-                <TableColumn>@</TableColumn>
-                <TableColumn>BET</TableColumn>
-                <TableColumn>PROFIT</TableColumn>
-            </TableHeader>
-            <TableBody>
-                {sortedPlayers?.map((player) => {
-                    const inGameCollor =
-                        player.gameStatus === STATUS_IN_GAME
-                            ? 'text-orange'
-                            : ''
-                    const lostColor =
-                        player.gameStatus === STATUS_LOST ? 'text-red-500' : ''
+        <>
+            <Table
+                removeWrapper
+                aria-label='User Bets Table'
+                className='scrollbar-thin scrollbar-thumb-orange scrollbar-track-gray-600 overflow-auto'
+            >
+                <TableHeader>
+                    <TableColumn>User</TableColumn>
+                    <TableColumn>@</TableColumn>
+                    <TableColumn>BET</TableColumn>
+                    <TableColumn>PROFIT</TableColumn>
+                </TableHeader>
+                <TableBody>
+                    {sortedPlayers?.map((player) => {
+                        const inGameCollor =
+                            player.gameStatus === STATUS_IN_GAME
+                                ? 'text-orange'
+                                : ''
+                        const lostColor =
+                            player.gameStatus === STATUS_LOST
+                                ? 'text-red-500'
+                                : ''
 
-                    const winCollor =
-                        player.gameStatus === STATUS_WIN ? 'text-green-500' : ''
+                        const winCollor =
+                            player.gameStatus === STATUS_WIN
+                                ? 'text-green-500'
+                                : ''
 
-                    return (
-                        <TableRow key={player.user}>
-                            <TableCell
-                                className={`${inGameCollor} ${lostColor} ${winCollor}`}
-                            >
-                                {player.user}
-                            </TableCell>
-                            <TableCell
-                                className={`${inGameCollor} ${lostColor} ${winCollor}`}
-                            >
-                                {player.bust}
-                            </TableCell>
-                            <TableCell
-                                className={`${inGameCollor} ${lostColor} ${winCollor}`}
-                            >
-                                {player.bet}
-                            </TableCell>
-                            <TableCell
-                                className={`${inGameCollor} ${lostColor} ${winCollor}`}
-                            >
-                                {player.profit}
-                            </TableCell>
-                        </TableRow>
-                    )
-                })}
-            </TableBody>
-        </Table>
+                        return (
+                            <TableRow key={player.user}>
+                                <TableCell
+                                    className={`${inGameCollor} ${lostColor} ${winCollor}`}
+                                >
+                                    {player.user}
+                                </TableCell>
+                                <TableCell
+                                    className={`${inGameCollor} ${lostColor} ${winCollor}`}
+                                >
+                                    {player.bust}
+                                </TableCell>
+                                <TableCell
+                                    className={`${inGameCollor} ${lostColor} ${winCollor}`}
+                                >
+                                    {player.bet}
+                                </TableCell>
+                                <TableCell
+                                    className={`${inGameCollor} ${lostColor} ${winCollor}`}
+                                >
+                                    {player.profit}
+                                </TableCell>
+                            </TableRow>
+                        )
+                    })}
+                </TableBody>
+            </Table>
+            <div className='grid grid-cols-12 gap-2 pt-3'>
+                <div className='col-span-4 flex justify-center items-center'>
+                    Online: 120
+                </div>
+                <div className='col-span-4 flex justify-center items-center'>
+                    Playing: {players.length}
+                </div>
+                <div className='col-span-4 flex justify-center items-center'>
+                    Betting: {calculateBets()}
+                </div>
+            </div>
+        </>
     )
 }
