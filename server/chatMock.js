@@ -183,5 +183,138 @@ export const chatMock = [
     { user: 'LuckyLipsGina', message: 'Like you need to poop' },
     { user: 'Ed-Edd-N-Eddy', message: 'lol' },
     { user: 'iPhoneSebi7', message: 'eddy makes me so horny' },
-    { user: 'Bustabullshbit', message: 'looks more like lexi' }
+    { user: 'Bustabullshbit', message: 'looks more like lexi' },
+    { user: 'Tha-dr', message: 'Goo to free' },
+    { user: 'badlilbitchlikeyurr', message: '2x city' },
+    {
+        user: 'Shiba',
+        message:
+            'Tha-dr has taken over the top place in the daily profit leaderboard! 🏆'
+    },
+    { user: 'Chule08', message: 'I gotta see the difference' },
+    { user: 'Adam-waheed', message: '5x' },
+    { user: 'Adam-waheed', message: 'Dr' },
+    { user: 'LuckyLipsGina', message: 'gg' },
+    { user: 'badlilbitchlikeyurr', message: 'Gg' },
+    { user: 'Gina-im-ur-Gona', message: '@LuckyLipsGina who are u' },
+    { user: 'JuiceWorld', message: 'gg' },
+    { user: 'TURPS', message: 'thats gina IRL BF' },
+    { user: 'JuiceWorld', message: 'dr been fucking it up' },
+    { user: 'Adam-waheed', message: 'Leo 💩' },
+    { user: 'JujutsuKaisenCottage', message: 'He knows the way' },
+    { user: 'iPhoneSebi7', message: 'BOBBBBY' },
+    { user: 'GodzillaVsKong', message: '@appleguy thanks' },
+    { user: 'Vanlae', message: 'Good luck zila' },
+    { user: 'GodzillaVsKong', message: 'Lmao' },
+    { user: 'Gina-im-ur-Gona', message: 'wb zila' },
+    { user: 'GodzillaVsKong', message: 'Luck for what' },
+    { user: 'Chule08', message: "Godzilla's back" },
+    { user: 'Adam-waheed', message: 'Gl leo bastard' },
+    { user: 'Noughts', message: 'green or im gay' },
+    {
+        user: 'Chule08',
+        message:
+            '@godzillavskong can u stop being retarded and getting muted for stupid shit'
+    },
+    { user: 'badlilbitchlikeyurr', message: '8x' },
+    { user: 'Vanlae', message: 'luck is back' },
+    { user: 'theamericandream', message: 'godzilla how much you had to wager' },
+    {
+        user: 'cashcashcash77777',
+        message: 'As soon as everybody raised bet . The reds come'
+    },
+    { user: 'oshow', message: '100k? Or 1m' },
+    { user: 'Ed-Edd-N-Eddy', message: 'Always' },
+    { user: 'JujutsuKaisenCottage', message: 'Free god zilla' },
+    { user: 'Vanlae', message: 'he was given leniency' },
+    { user: 'Gina-im-ur-Gona', message: '15x plz' },
+    { user: 'Gina-im-ur-Gona', message: 'no 14.99x' },
+    { user: 'Tha-dr', message: 'My mute was 1m' },
+    {
+        user: 'JujutsuKaisenCottage',
+        message: 'Damn they tryna get u to wager hella'
+    },
+    { user: 'badlilbitchlikeyurr', message: 'When did u get muted dr' },
+    { user: 'cashcashcash77777', message: 'Mtfker' },
+    { user: 'cashcashcash77777', message: 'What a bait' },
+    { user: 'iPhoneSebi7', message: 'bro' },
+    { user: 'cashcashcash77777', message: 'Go to hell' },
+    { user: 'iPhoneSebi7', message: 'cash cash' },
+    { user: 'Tha-dr', message: 'Been a min' },
+    { user: '3style', message: 'another 1x' },
+    { user: 'cashcashcash77777', message: 'Bagamiasi pula în familia lu leo' },
+    {
+        user: 'cashcashcash77777',
+        message: 'Să îi iau morți și nația în pula de muist'
+    },
+    {
+        user: 'Notification',
+        message:
+            'Please speak English in the English channel. You can speak other languages in their dedicated chat channels or the spam channel.'
+    },
+    { user: 'iPhoneSebi7', message: '@cashcashcash77777 add me' },
+    { user: 'burnout', message: 'wish u nun but the luck dr' },
+    { user: 'HOTCAKE', message: 'legend still going strong' },
+    { user: 'burnout', message: 'a survivor lol' },
+    { user: 'TheB52', message: 'so i bombing' },
+    { user: 'TheB52', message: 'is*' },
+    { user: 'JujutsuKaisenCottage', message: 'these highs are highing' },
+    {
+        user: 'GodzillaVsKong',
+        message: '@theamericandream it was 100k , but 100% my fault'
+    },
+    { user: 'Adam-waheed', message: '(' },
+    { user: 'Gina-im-ur-Gona', message: 'b2b plz' },
+    { user: 'GodzillaVsKong', message: 'For that mute' },
+    { user: 'Gina-im-ur-Gona', message: 'erick ryan daniel leo' },
+    { user: 'URSOPOPULAR', message: 'wow' },
+    { user: 'URSOPOPULAR', message: 'good rolls' },
+    { user: 'Chule08', message: "I'll fuck u godzilla" },
+    { user: 'GodzillaVsKong', message: "Nah u can't" },
+    { user: 'Chule08', message: 'Stupid bitch fucker.' },
+    { user: 'Chule08', message: 'Why not' },
+    { user: 'JujutsuKaisenCottage', message: 'Aggressive' },
+    { user: 'Epileptic', message: 'Wtf lol' },
+    { user: 'GodzillaVsKong', message: 'Cuz u got 1.5 inch dick' },
+    { user: 'GodzillaVsKong', message: 'Not enough' },
+    { user: 'GodzillaVsKong', message: 'Atleast need 4 inch bro' },
+    {
+        user: 'Chule08',
+        message: 'Why are u projecting Ur insecurities Godzilla'
+    },
+    { user: 'Michymid', message: 'everyone is sad here lol' },
+    { user: 'Chule08', message: "My dick is 6 inches it's enough" },
+    { user: 'GodzillaVsKong', message: 'Why ur girl.is unhappy thn' },
+    { user: 'Chule08', message: "I don't have a girl idiot" },
+    { user: 'GodzillaVsKong', message: 'Oh he left' },
+    { user: 'GodzillaVsKong', message: 'She*' },
+    { user: 'Chule08', message: 'No I left her' },
+    { user: 'GodzillaVsKong', message: 'U have to' },
+    { user: '700bitdeposit', message: 'erhhh' },
+    { user: 'GodzillaVsKong', message: '21x' },
+    { user: 'GodzillaVsKong', message: 'Ezpz' },
+    { user: '700bitdeposit', message: '600 -> 3k -> 19 -> 1.2k -> 900' },
+    { user: '700bitdeposit', message: 'ew lol' },
+    {
+        user: 'JujutsuKaisenCottage',
+        message:
+            'I was gamblin 2 days ago and this girl im wit asked me what game I was playing'
+    },
+    { user: 'JujutsuKaisenCottage', message: "I said it's a math game" },
+    { user: 'JujutsuKaisenCottage', message: 'LMAO' },
+    { user: 'burnout', message: 'tha dr get thosee' },
+    { user: 'Adam-waheed', message: 'Nice dr' },
+    {
+        user: 'LuckyLipsGina',
+        message: 'Time to go suck some dicks under a bridge somewhere'
+    },
+    { user: 'TURPS', message: 'with those lucky lips' },
+    { user: 'oshow', message: "So many gina's fans here" },
+    {
+        user: 'JujutsuKaisenCottage',
+        message: 'They gonna come flocking to you with them lips'
+    },
+    { user: 'Idontknow00', message: 'Back at it' },
+    { user: 'JujutsuKaisenCottage', message: '30x in 3 games or less' },
+    { user: 'TheB52', message: '!med 1h 2h 3h' }
 ]

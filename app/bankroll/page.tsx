@@ -9,6 +9,7 @@ import {
     TableRow
 } from '@nextui-org/table'
 import { SiBitcoinsv } from 'react-icons/si'
+import { Link } from '@nextui-org/link'
 
 import { title } from '@/components/primitives'
 
@@ -18,17 +19,19 @@ export default function BankrollPage() {
             <h1 className={title()}>Bankroll</h1>
             <div>
                 <h2 className='text-xl font-semibold'>What is the bankroll?</h2>
-                <p className='mt-2 text-white '>
+                <p className='mt-2 text-white'>
                     The bankroll is the pool of money that players bet against.
-                    When players win, the money comes out of bustabits bankroll,
-                    and when they lose, the money goes into the bankroll.
+                    When players win, the money comes out of the Bustabits
+                    bankroll, and when they lose, the money goes into the
+                    bankroll.
                 </p>
                 <p className='mt-2 text-white'>
-                    bustabits bankroll is privately funded by bankroll
-                    investors, meaning that anyone who has completed our
-                    verification process and is eligible to invest will be to
-                    get a share of its profits. See How does bankroll investing
-                    work? section for more information on bankroll investing.
+                    The Bustabits bankroll is privately funded by bankroll
+                    investors. Anyone who has completed our verification process
+                    and is eligible to invest can get a share of its profits.
+                    See the{' '}
+                    <Link href='/help'>How does bankroll investing work?</Link>{' '}
+                    section for more information on bankroll investing.
                 </p>
             </div>
             <div className='w-full'>
