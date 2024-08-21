@@ -18,8 +18,15 @@ export const sortPlayers = (players: IPlayers[]): IPlayers[] => {
     }
 
     return players.sort((a, b) => {
-        return (
+        // First, sort by gameStatus
+        const statusComparison =
             (statusOrder[a.gameStatus] || 0) - (statusOrder[b.gameStatus] || 0)
-        )
+
+        if (statusComparison !== 0) {
+            return statusComparison
+        }
+
+        // If gameStatus is the same, sort by bet (as number) in descending order
+        return parseFloat(b.bet) - parseFloat(a.bet)
     })
 }

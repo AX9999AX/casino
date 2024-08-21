@@ -27,6 +27,12 @@ export default function Chat() {
         }
     }, [messages])
 
+    const formatTimestamp = (timestamp: string) => {
+        const [hours, minutes] = timestamp.split(':')
+
+        return `${hours}:${parseInt(minutes) + 9}`
+    }
+
     return (
         <>
             <ul
@@ -44,7 +50,7 @@ export default function Chat() {
                             className='flex flex-wrap items-center'
                         >
                             <div className='text-xs px-1'>
-                                {message.timestamp}
+                                {formatTimestamp(message.timestamp)}
                             </div>
                             <div className='text-sm text-orange pr-1'>
                                 {message.user}:
@@ -56,8 +62,8 @@ export default function Chat() {
                     )
                 })}
             </ul>
-            <div className='border mt-2 p-1 border-red-500 text-red-500'>
-                Connect wallet to write messages!
+            <div className='border mt-2 p-1 border-red-500 text-gray-500'>
+                You must connect wallet to enter the chat
             </div>
         </>
     )

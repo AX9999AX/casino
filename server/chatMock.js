@@ -1,208 +1,187 @@
 export const chatMock = [
-    { user: 'LuckyLuke', message: 'Hi everyone! Ready to play?' },
-    { user: 'BettingBenny42', message: 'Let’s go! I’m feeling lucky today!' },
-    { user: 'GamblerGina', message: 'What’s the current magic number?' },
-    { user: 'HighRollerHank76', message: 'Just joined! What’s the strategy?' },
+    { user: 'Ezgilll', message: 'Remember that cobra guy' },
+    { user: 'CHAINCHOMP', message: 'Thanks for the rain!' },
+    { user: 'Ezgilll', message: 'He was sleeping' },
+    { user: 'Bustabullshbit', message: 'yeah swimwear' },
+    { user: 'JuiceWorld', message: 'hmm' },
     {
-        user: 'CautiousCarl',
-        message: 'I heard waiting for the right moment is key.'
-    },
-    {
-        user: 'LuckyLuke',
-        message: 'Good luck, everyone! May the odds be in your favor!'
-    },
-    {
-        user: 'NewbieNina91',
-        message: 'Can anyone explain how this game works?'
-    },
-    {
-        user: 'GamblerGina',
-        message: 'It’s simple! Just bet and try to guess the highest number!'
-    },
-    {
-        user: 'RiskyRachel',
+        user: 'Bustabullshbit',
         message:
-            'Is it just me or does it feel like the numbers are lower today?'
+            'i gotta go back to ny previous browser to get any bookmarks. oain in the ass'
+    },
+    { user: 'Acss', message: 'Yo' },
+    { user: 'Acss', message: '7green' },
+    {
+        user: 'Bustabullshbit',
+        message: 'am thinking of a different fix though....'
+    },
+    { user: 'Epileptic', message: 'Hi' },
+    { user: 'wantingsomedick', message: 'Dam' },
+    { user: 'Mkenya2', message: 'Sicko is the next Aminam ,trust me' },
+    {
+        user: 'Chule08',
+        message:
+            'Day 23 of mocking FurtherMucker and calling him a commie con artist'
+    },
+    { user: 'Bustabullshbit', message: 'you mean day 1' },
+    { user: 'Chule08', message: 'Day one or one day?' },
+    { user: 'Mkenya2', message: "Aww , he's an artist ? Not a model ?" },
+    { user: 'Chule08', message: 'Hard work, dedication' },
+    { user: 'Bustabullshbit', message: 'either or' },
+    { user: 'Bustabullshbit', message: 'an autist' },
+    { user: 'TheGoatFucker52', message: 'Autistic' },
+    { user: 'Chule08', message: 'Kyle Rittenhouse crocodile tears' },
+    { user: 'Chule08', message: 'Cry me a river' },
+    { user: 'Mkenya2', message: 'That was my hero !' },
+    {
+        user: 'Bustabullshbit',
+        message: 'you can see my natural autistic sty)e in my paintings'
     },
     {
-        user: 'BettingBenny42',
-        message: 'I got a good feeling about this round!'
-    },
-    { user: 'JackpotJoe', message: 'Just hit a 3.5x! Not bad!' },
-    { user: 'WinningWill', message: 'Nice one! I’m still waiting for my win.' },
-    { user: 'CautiousCarl', message: 'Anyone want to share their bets?' },
-    { user: 'LuckyLuke', message: 'I’m going all in this time!' },
-    {
-        user: 'HighRollerHank76',
-        message: 'I just placed my bet! Let’s see how this goes.'
+        user: 'Chule08',
+        message: 'I can see it just by your daily typing patterns honestly'
     },
     {
-        user: 'BettingBea',
-        message: 'Hey! What’s the highest anyone has hit today?'
+        user: 'Mkenya2',
+        message: 'I keep loosing respect for those who fart loudly in public!'
     },
-    { user: 'RiskyRachel', message: 'I think it was around 5x earlier.' },
+    { user: 'Bustabullshbit', message: 'at least its prevalent' },
+    { user: 'Chule08', message: 'Biden Is not my president' },
+    { user: 'Chule08', message: '- are you American?' },
+    { user: 'Chule08', message: "- no I'm from India" },
+    { user: 'Smiileyy', message: 'Has anyone had yhis issue before' },
+    { user: 'TURPS', message: 'issue with?' },
+    { user: 'Smiileyy', message: 'Not able to bet' },
+    { user: 'Smiileyy', message: 'says disabled to place bet' },
+    { user: 'TURPS', message: 'sigh' },
     {
-        user: 'NewbieNina',
-        message: 'Can’t believe I just lost! So close to hitting 4x.'
+        user: 'Bustabullshbit',
+        message: 'not mine either. my president is Claudia Sheinbaum'
     },
-    { user: 'JackpotJoe', message: 'Gg to whoever won that last round!' },
+    { user: 'Bustabullshbit', message: 'yes ppl have had that' },
+    { user: 'Chule08', message: 'My president is Yitzhak Herzog' },
+    { user: 'JuiceWorld', message: '@Smiileyy are you from the us?' },
+    { user: 'Smiileyy', message: 'No' },
+    { user: 'Chule08', message: 'U got disabled for gambling under age' },
+    { user: 'Smiileyy', message: 'Yeah weird' },
+    { user: 'Chule08', message: 'How is it weird' },
     {
-        user: 'WinningWill',
-        message: 'I’m trying to figure out when to cash out. Any tips?'
+        user: 'Bustabullshbit',
+        message: 'im sure you likely know why it says that though. most do'
     },
-    { user: 'BettingBenny42', message: 'Cash out early! Don’t get greedy!' },
-    { user: 'LuckyLola', message: 'Just won 6x! Whoo!' },
-    { user: 'GamblerGina', message: 'Congrats, LuckyLola! That’s amazing!' },
+    { user: 'Mkenya2', message: "Or you're from USA !" },
+    { user: 'Smiileyy', message: 'Never had this issue' },
+    { user: 'Smiileyy', message: 'had like 100s accounts' },
+    { user: 'Chule08', message: 'LOL' },
+    { user: 'Smiileyy', message: 'First time come across it' },
     {
-        user: 'CautiousCarl',
-        message: 'I’m still stuck on 2x. What am I doing wrong?'
+        user: 'Chule08',
+        message: 'having 100s of accounts probably explains the issue'
     },
-    { user: 'RiskyRachel', message: 'Just bet small and watch the trends!' },
+    { user: 'Chule08', message: "You're one Sus mfker" },
+    { user: 'Smiileyy', message: 'Gotta deleted them when you tilt' },
     {
-        user: 'HighRollerHank76',
-        message: 'Who’s feeling confident about the next round?'
+        user: 'Bustabullshbit',
+        message: 'what are some if your non deleted alts'
     },
-    { user: 'LuckyLuke', message: 'I am! Let’s do this!' },
-    { user: 'WinningWill', message: 'Let’s go! I’m ready for a big win!' },
-    { user: 'NewbieNina91', message: 'I’m just here for the fun!' },
-    { user: 'JackpotJoe', message: 'I hit 7x once, and it was epic!' },
+    { user: 'Smiileyy', message: 'Might have to jump on them' },
+    { user: 'Smiileyy', message: 'theres a big list of them' },
+    { user: 'Mkenya2', message: "That's so horny of you I mean" },
+    { user: 'Bustabullshbit', message: '100s id say is big' },
+    { user: 'Mkenya2', message: '@Chule08 where do you stay?' },
+    { user: 'Ezgilll', message: 'Sicko lost again' },
+    { user: 'Ezgilll', message: 'Unlucky guy' },
+    { user: 'GodzillaVsKong', message: 'As I said , even whales r losing' },
     {
-        user: 'BettingBea',
-        message: 'I’ve never played before. What should I know?'
+        user: 'Smiileyy',
+        message: 'Okay made new account lets see if that works'
     },
+    { user: 'Smiileyy', message: 'Weird' },
+    { user: 'Michymid', message: 'who are you?' },
+    { user: 'Smiileyy', message: 'Daniel' },
+    { user: 'Mkenya2', message: 'Daniel son of Dickiel ?' },
+    { user: 'Clowse', message: 'players had reduced to less than 20' },
+    { user: 'Bustabullshbit', message: '@DanieI is muted' },
+    { user: 'Clowse', message: 'that was a record day' },
+    { user: 'Smiileyy', message: 'Been here longer then some of you' },
+    { user: 'Clowse', message: 'but now they rising again' },
+    { user: 'Smiileyy', message: 'days before frenchbulldog' },
+    { user: 'Mkenya2', message: 'You know me ?' },
+    { user: 'Smiileyy', message: 'was a thing' },
+    { user: 'Clowse', message: 'who muted Danny?' },
     {
-        user: 'GamblerGina',
-        message: 'Just keep an eye on the numbers. It’s all about timing!'
+        user: 'Bustabullshbit',
+        message: 'oh ew did leo change the lettering lol'
     },
-    { user: 'RiskyRachel', message: 'I’m on a losing streak. Need some luck!' },
-    { user: 'LuckyLola', message: 'Someone just hit 8x! Wow!' },
+    { user: 'Chule08', message: '@Daniel' },
+    { user: 'Clowse', message: 'what lettering' },
     {
-        user: 'WinningWill',
-        message: 'Who was it? I need to know their secret!'
-    },
-    { user: 'BettingBenny42', message: 'I think it was LuckyLuke! Congrats!' },
-    { user: 'LuckyLuke', message: 'Thanks, everyone! I’m so hyped right now!' },
-    { user: 'HighRollerHank76', message: 'That’s a massive win! Great job!' },
-    { user: 'NewbieNina', message: 'I’m ready for the next round! Let’s go!' },
-    { user: 'JackpotJoe', message: 'I hope this next round is better!' },
-    {
-        user: 'CautiousCarl',
-        message: 'Just placed my bet again. Fingers crossed!'
-    },
-    {
-        user: 'RiskyRachel',
-        message: 'Let’s see if we can get that magic number!'
-    },
-    { user: 'WinningWill', message: 'I’ll take anything over 4x right now.' },
-    {
-        user: 'GamblerGina',
-        message: 'Can someone give me an update on the game?'
-    },
-    {
-        user: 'HighRollerHank76',
-        message: 'Just a few seconds left! Get your bets in!'
-    },
-    { user: 'JackpotJoe', message: 'I’m nervous! Hope I don’t crash again!' },
-    { user: 'BettingBea', message: 'Remember, patience is key!' },
-    {
-        user: 'CautiousCarl',
-        message: 'And timing! Don’t be afraid to cash out!'
-    },
-    { user: 'LuckyLuke', message: 'Here we go! Let’s see that magic number!' },
-    { user: 'WinningWill', message: 'Here we go again! Hoping for a win!' },
-    { user: 'LuckyLola', message: 'Whoa! Just hit 9x! Amazing!' },
-    { user: 'GamblerGina', message: "Wow! Congrats, LuckyLola! That's huge!" },
-    { user: 'NewbieNina91', message: 'Did I miss any big wins?' },
-    { user: 'RiskyRachel', message: 'Yeah, LuckyLola just hit 9x! Insane!' },
-    { user: 'BettingBenny42', message: 'I wish I had been here for that!' },
-    {
-        user: 'HighRollerHank76',
-        message: 'Looks like LuckyLola is on fire today!'
-    },
-    { user: 'CautiousCarl', message: 'I’m ready to follow that luck!' },
-    {
-        user: 'WinningWill',
-        message: 'Just placed my bet again. Let’s see what happens!'
-    },
-    { user: 'JackpotJoe', message: 'I’m betting small this time. Less risk!' },
-    { user: 'LuckyLola', message: 'Whoa! Just hit 10x! I can’t believe it!' },
-    { user: 'RiskyRachel', message: 'What?! That’s insane! I need that luck!' },
-    { user: 'BettingBea', message: 'Time to get serious with my bets!' },
-    { user: 'GamblerGina', message: 'I’m still learning but enjoying it!' },
-    {
-        user: 'NewbieNina',
-        message: 'Just got a message that the next round is starting!'
-    },
-    { user: 'LuckyLuke', message: 'Let’s do this! I’m ready!' },
-    { user: 'WinningWill', message: 'Can we get a big number this time?' },
-    {
-        user: 'HighRollerHank76',
-        message: 'Good luck to everyone! Let’s make it a good round!'
-    },
-    { user: 'JackpotJoe', message: 'Here we go again! Hoping for a win!' },
-    { user: 'RiskyRachel', message: 'I’ll take anything over 5x this time!' },
-    {
-        user: 'CautiousCarl',
-        message: 'Just got in again! Let’s hope for a win!'
-    },
-    { user: 'LuckyLola', message: 'Anyone else feeling the pressure?' },
-    { user: 'BettingBenny42', message: 'It’s all about having fun, right?' },
-    { user: 'NewbieNina', message: 'Exactly! Let’s keep it light!' },
-    { user: 'GamblerGina', message: 'Just hit 15x! I can’t believe it!' },
-    { user: 'WinningWill', message: 'Amazing! What’s your secret, LuckyLola?' },
-    { user: 'LuckyLola', message: 'Just patience and a little luck!' },
-    {
-        user: 'HighRollerHank76',
-        message: 'I need some of that luck right now!'
+        user: 'Bustabullshbit',
+        message: 'capital i looks different than a lowercase L now'
     },
     {
-        user: 'CautiousCarl',
-        message: 'Just placed my bet! Let’s see what happens!'
+        user: 'Smiileyy',
+        message: 'I think I started playing on here just after daniel took over'
     },
+    { user: 'Bustabullshbit', message: 'Daniel died' },
+    { user: 'Smiileyy', message: 'Yh bless him' },
     {
-        user: 'JackpotJoe',
-        message: 'Good luck, everyone! May the best bets win!'
+        user: 'Smiileyy',
+        message: 'he died from too much money he took from us'
     },
+    { user: 'Mkenya2', message: 'With a Thai beauty on top of him' },
+    { user: 'Bustabullshbit', message: 'from aids' },
+    { user: 'Clowse', message: 'lmao he overfed' },
+    { user: 'Mkenya2', message: 'Why did he buy a pussy with a whole 1btc ?' },
+    { user: 'Bustabullshbit', message: 'was a test micro transaction' },
+    { user: 'wantingsomedick', message: 'Hello all' },
+    { user: 'Vanlae', message: 'Good green' },
+    { user: 'oshow', message: 'Hi dick' },
+    { user: 'wantingsomedick', message: 'Hi oshow' },
+    { user: 'wantingsomedick', message: 'High multis rn' },
+    { user: 'wantingsomedick', message: '@halfempty dms' },
+    { user: 'Mkenya2', message: 'I see a mute cooking.' },
+    { user: 'MisterZa', message: 'good luck all :)' },
     {
-        user: 'BettingBea',
-        message: 'I’m still figuring this out. It’s fun, though!'
+        user: 'wantingsomedick',
+        message:
+            'Don’t yall hate it when the dealer turns over 6 card 21 when u have 20'
     },
-    { user: 'RiskyRachel', message: 'I think I’ll bet big this time!' },
-    { user: 'NewbieNina', message: 'Hope I can finally catch a win!' },
-    { user: 'GamblerGina', message: 'Let’s keep the good vibes going!' },
-    { user: 'LuckyLuke', message: 'I’m feeling a lucky number coming up!' },
-    { user: 'WinningWill', message: 'Fingers crossed for everyone!' },
-    { user: 'JackpotJoe', message: 'Just hit 2.5x! Better than nothing!' },
+    { user: 'wantingsomedick', message: 'Lost a 50$ hand jn cuz of it' },
+    { user: 'wantingsomedick', message: '2 A Q A 2 5' },
+    { user: 'wantingsomedick', message: 'and I had J J' },
+    { user: 'Gina-im-ur-Gona', message: 'BJ?' },
+    { user: 'wantingsomedick', message: 'Ye' },
+    { user: 'Ed-Edd-N-Eddy', message: 'Ello butt nuggets' },
+    { user: '10kBitsDown', message: 'Dam nice' },
+    { user: 'Mkenya2', message: 'Hello dick daddy' },
+    { user: 'Ed-Edd-N-Eddy', message: 'Hello' },
+    { user: 'DoIt4Jack', message: 'Damnit, my timing is awful today' },
+    { user: 'Mkenya2', message: 'How are you love' },
+    { user: '10kBitsDown', message: 'Wow' },
+    { user: '10kBitsDown', message: 'I would of made so much from them 2' },
+    { user: 'Ed-Edd-N-Eddy', message: 'Rolls don’t look to bad again today' },
     {
-        user: 'HighRollerHank76',
-        message: 'Let’s see if we can reach 6x this round!'
+        user: 'BIGMONEYMATT3737',
+        message: 'is there anyway I can change my user ? Loll'
     },
-    { user: 'LuckyLola', message: 'I’m ready for some serious wins!' },
-    { user: 'CautiousCarl', message: 'Betting small this time! It’s safer!' },
-    { user: 'RiskyRachel', message: 'I’m in for a thrill! Let’s do this!' },
+    { user: 'Ed-Edd-N-Eddy', message: 'I’m good mkenya wbu' },
+    { user: 'DoIt4Jack', message: 'Make a new acct and transfer' },
+    { user: 'Mkenya2', message: 'Make a new Account' },
+    { user: 'Mkenya2', message: 'Am horny bro , a lot is going on' },
+    { user: 'Ed-Edd-N-Eddy', message: 'Omg better go rub it out' },
+    { user: 'Mkenya2', message: 'Am thinking about it' },
+    { user: 'iPhoneSebi7', message: 'eddy' },
     {
-        user: 'NewbieNina',
-        message: 'Still trying to figure out when to cash out.'
+        user: 'LuckyLipsGina',
+        message: '@Bustabullshbit I didnt know you were a streamer'
     },
-    { user: 'GamblerGina', message: 'Always cash out when you’re ahead!' },
-    { user: 'BettingBenny42', message: 'Good advice, Gina! Thanks!' },
-    {
-        user: 'LuckyLuke',
-        message: 'Just placed my bet! Let’s see what happens!'
-    },
-    { user: 'WinningWill', message: 'I hope this round brings some big wins!' },
-    {
-        user: 'JackpotJoe',
-        message: 'I’m starting to feel like I’m never gonna win!'
-    },
-    { user: 'HighRollerHank76', message: 'Same here! I just keep losing!' },
-    {
-        user: 'CautiousCarl',
-        message: 'Not satisfied with my bets! Feels like a bad day!'
-    },
-    { user: 'RiskyRachel', message: 'Ugh, I’m just not getting it today!' },
-    {
-        user: 'GamblerGina',
-        message: 'Don’t lose hope, everyone! It’ll turn around!'
-    }
+    { user: 'Ed-Edd-N-Eddy', message: 'Kinda looks like bam margera' },
+    { user: 'LuckyLipsGina', message: 'He got a nice old lady scarf' },
+    { user: 'Ed-Edd-N-Eddy', message: 'Fr xD' },
+    { user: 'Mkenya2', message: 'Bro ,I feel something strange' },
+    { user: 'LuckyLipsGina', message: 'Like you need to poop' },
+    { user: 'Ed-Edd-N-Eddy', message: 'lol' },
+    { user: 'iPhoneSebi7', message: 'eddy makes me so horny' },
+    { user: 'Bustabullshbit', message: 'looks more like lexi' }
 ]

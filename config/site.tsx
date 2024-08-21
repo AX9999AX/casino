@@ -6,7 +6,7 @@ import { RiDashboardHorizontalFill } from 'react-icons/ri'
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-    name: 'Bustabit',
+    name: 'Bustabit – The original crash game',
     description:
         'Bustabit is a betting game where you try to guess the largest possible magic number in each contest.',
     navItems: [

@@ -4,11 +4,18 @@ import React, { useEffect, useState } from 'react'
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts'
 import { io } from 'socket.io-client'
 
+import { IHistory } from '../History/History.type'
+
 import { GameData } from './Chart.type'
 
 export const Chart = () => {
     const [data, setData] = useState<GameData[]>([])
     const [waitingTime, setWaitingTime] = useState<number>(10)
+    const [history, setHistory] = useState<IHistory[]>([])
+
+    const firstItem = history?.length
+        ? history?.slice().reverse()[0]
+        : { bust: 0, hash: '' }
 
     useEffect(() => {
         const socket = io(String(process.env.NEXT_PUBLIC_SOCKET_URL))
@@ -21,10 +28,52 @@ export const Chart = () => {
             setWaitingTime(newWaitingTime)
         })
 
+        socket.on('history', (historyData: IHistory[]) => {
+            setHistory(historyData)
+        })
+
         return () => {
             socket.disconnect()
         }
     }, [])
+
+    const renderNextRoundText = () => {
+        return waitingTime < 8.2 ? (
+            <text
+                dominantBaseline='middle'
+                fill='white'
+                fontSize={20}
+                textAnchor='middle'
+                x='50%'
+                y='50%'
+            >
+                {`Next round starts in ${waitingTime}s`}
+            </text>
+        ) : (
+            <>
+                <text
+                    dominantBaseline='middle'
+                    fill='red'
+                    fontSize={60}
+                    textAnchor='middle'
+                    x='50%'
+                    y='40%'
+                >
+                    {`Busted`}
+                </text>
+                <text
+                    dominantBaseline='middle'
+                    fill='red'
+                    fontSize={60}
+                    textAnchor='middle'
+                    x='50%'
+                    y='60%'
+                >
+                    {'@ ' + firstItem.bust.toFixed(2) + 'x'}
+                </text>
+            </>
+        )
+    }
 
     return (
         <div className='relative chart-h'>
@@ -33,8 +82,8 @@ export const Chart = () => {
                     data={data}
                     margin={{ top: 0, right: 40, left: 0, bottom: 10 }}
                 >
-                    <XAxis dataKey='gameTime' domain={[0, 3]} type='number' />
-                    <YAxis domain={[0, 9]} tick={false} />
+                    <XAxis dataKey='gameTime' domain={[0, 5]} type='number' />
+                    <YAxis domain={[0, 25]} tick={false} />
                     <Line
                         dataKey='multiplier'
                         dot={false}
@@ -44,16 +93,7 @@ export const Chart = () => {
                         type='monotone'
                     />
                     {waitingTime < 9.9 ? (
-                        <text
-                            dominantBaseline='middle'
-                            fill='white'
-                            fontSize={20}
-                            textAnchor='middle'
-                            x='50%'
-                            y='50%'
-                        >
-                            {`Next round starts in ${waitingTime}s`}
-                        </text>
+                        renderNextRoundText()
                     ) : (
                         <text
                             dominantBaseline='middle'

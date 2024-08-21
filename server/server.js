@@ -30,13 +30,33 @@ const MAX_HISTORY = 20
 let currentMultiplier = -0.01
 let gameTime = -0.1
 let isPaused = false
-let interval = 100
+let interval = 75
 let waitingTime = 10
 let x = 0
+
+let currentOnline = 350
 
 let gameChartCoordinates = []
 
 let currentGameMockIndex = 0
+
+const adjustCurrentOnline = () => {
+    // Generate a random boolean for +1 or -1 change
+    const change = Math.random() < 0.5 ? -1 : 1
+
+    // Update currentOnline with bounds checking
+    if (currentOnline + change >= 328 && currentOnline + change <= 369) {
+        currentOnline += change
+    }
+
+    io.emit('currentOnline', currentOnline)
+}
+
+const changeOnline = () => {
+    setInterval(adjustCurrentOnline, 60000)
+}
+
+changeOnline()
 
 const addRandomMessage = () => {
     const randomIndex = Math.floor(Math.random() * chatMock.length)
@@ -56,7 +76,7 @@ const addRandomMessage = () => {
 }
 
 const scheduleRandomMessage = () => {
-    const randomDelay = Math.floor(Math.random() * (10000 - 2000 + 1)) + 2000
+    const randomDelay = Math.floor(Math.random() * (25000 - 10000 + 1)) + 10000
 
     setTimeout(addRandomMessage, randomDelay)
 }
@@ -77,8 +97,9 @@ const updateHistory = () => {
 
 const gerRandomBet = () => {
     const values = [
-        1, 2, 5, 7, 10, 15, 20, 25, 100, 500, 701, 900, 1000, 1400, 2000, 2299,
-        5000
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 14, 15, 20, 22, 23, 25, 30, 35, 37,
+        40, 42, 50, 55, 58, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160,
+        170, 180, 190, 200, 250, 300, 320, 380
     ]
     const randomIndex = Math.floor(Math.random() * values.length)
 
@@ -121,10 +142,70 @@ const generateRandomPlayerName = () => {
         'ArmaniXXX',
         'Hellboy',
         'Paryys',
-        'Gragg11'
+        'Gragg11',
+        'Shadow',
+        'Nova',
+        'Blaze',
+        'Echo',
+        'Storm',
+        'Titan',
+        'Phoenix',
+        'Vortex',
+        'Nebula',
+        'Lynx',
+        'Zephyr',
+        'Sable',
+        'Orion',
+        'Cascade',
+        'Frost',
+        'Wraith',
+        'Myst',
+        'Falcon',
+        'Comet',
+        'Rogue',
+        'Solstice',
+        'Ember',
+        'Specter',
+        'Zenith',
+        'Aether',
+        'Eclipse',
+        'Quasar',
+        'Serenity',
+        'Glacier',
+        'Inferno',
+        'Mirage',
+        'Pinnacle',
+        'Raven',
+        'Aurora',
+        'Echo',
+        'Bliss',
+        'Tempest',
+        'Nimbus',
+        'Mistral',
+        'Helios',
+        'Twilight',
+        'Celeste',
+        'Skye',
+        'Quill',
+        'Rift',
+        'Horizon',
+        'Pulse',
+        'Luna',
+        'Pyro',
+        'Talon',
+        'Crimson',
+        'Vega',
+        'Zeal',
+        'Cinder',
+        'Rune',
+        'Blitz',
+        'Sage',
+        'Wraith',
+        'Lunar',
+        'Void'
     ]
 
-    return parts[Math.floor(Math.random() * parts.length)];
+    return parts[Math.floor(Math.random() * parts.length)]
 }
 
 const generateUniquePlayerName = (existingPlayers) => {
@@ -138,7 +219,7 @@ const generateUniquePlayerName = (existingPlayers) => {
 }
 
 const updatePlayers = () => {
-    for (let i = 0; i < Math.floor(Math.random() * 11) + 12; i++) {
+    for (let i = 0; i < Math.floor(Math.random() * (48 - 28 + 1)) + 28; i++) {
         setTimeout(
             () => {
                 if (i === 0) {
@@ -156,7 +237,7 @@ const updatePlayers = () => {
                 })
                 io.emit('players', players)
             },
-            i * 200 + 2000
+            i * 150 + 2000
         )
     }
 }
@@ -184,7 +265,7 @@ const playersLost = () => {
 }
 
 const cleanCoordinates = () => {
-    if (gameChartCoordinates.length === 200) {
+    if (gameChartCoordinates.length === 50) {
         gameChartCoordinates = gameChartCoordinates.filter(
             (_, index) => index % 2 === 0
         )
@@ -230,6 +311,7 @@ const gameLoop = () => {
             updateHistory()
             updatePlayers()
             waitingForNewGame()
+            interval = 75
         } else {
             setTimeout(gameLoop, interval)
         }
@@ -240,6 +322,7 @@ const gameLoop = () => {
 gameLoop()
 
 io.on('connection', () => {
+    io.emit('currentOnline', currentOnline)
     io.emit('waitingTime', waitingTime.toFixed(2))
     io.emit('gameMultiplier', gameChartCoordinates)
     io.emit('history', history)

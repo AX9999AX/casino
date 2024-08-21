@@ -28,8 +28,8 @@ export const gameMock = [
         hash: '05710e9c57e737837309b22a2a41723f547a1cbf117603d932fbd6f5d1a5266d'
     },
     {
-        bust: 35.15,
-        hash: '79248822f139c515eaa60db7aa7f6437fe7271e51004f8e6890018b7838e8f93'
+        bust: 10.79,
+        hash: 'ca1e119241e274e9804587b48ff8c6591c826445ff1ace39c6552b10e9743d4f'
     },
     {
         bust: 12.17,
@@ -76,11 +76,11 @@ export const gameMock = [
         hash: '61af1571a4d5267e86372242b880c86677dbbaab81c3d27216eb9481688134dd'
     },
     {
-        bust: 36.03,
-        hash: 'ed8b7fd43617b4739704550c05758e5504b2bef470450067e4b8aed8e99c69ac'
+        bust: 4.64,
+        hash: '9243c706626d622d61de5f7e222e97db6faebcf3727bba754d54272a88ae7806'
     },
     {
         bust: 12.68,
         hash: '25eeca5148828cd24b43fc3379e50feb6fe4346ffd3e784d1f73356afce1844b'
-    },
+    }
 ]

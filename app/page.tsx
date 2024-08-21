@@ -43,6 +43,26 @@ export default function Home() {
                         </CardBody>
                     </Card>
                 </div>
+                <div className='block md:hidden my-4'>
+                    <Card className='col-span-12'>
+                        <CardBody className='flex justify-center'>
+                            <Button
+                                isExternal
+                                as={Link}
+                                className='text-sm font-normal text-default-600 bg-default-100'
+                                startContent={
+                                    <FaConnectdevelop
+                                        className='text-orange'
+                                        size={24}
+                                    />
+                                }
+                                variant='flat'
+                            >
+                                Connect Wallet to start playing
+                            </Button>
+                        </CardBody>
+                    </Card>
+                </div>
                 <div className='chart-section-h flex w-full flex-col pt-4'>
                     <Tabs aria-label='Options'>
                         <Tab key='chat' title='Chat'>

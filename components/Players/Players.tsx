@@ -8,7 +8,7 @@ import {
     TableHeader,
     TableRow
 } from '@nextui-org/table'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { io } from 'socket.io-client'
 
 import {
@@ -21,6 +21,7 @@ import {
 
 export default function Players() {
     const [players, setPlayers] = useState<IPlayers[]>([])
+    const [online, setOnline] = useState<number>(0)
 
     const sortedPlayers = sortPlayers(players)
 
@@ -29,6 +30,10 @@ export default function Players() {
 
         socket.on('players', (playersData) => {
             setPlayers(playersData)
+        })
+
+        socket.on('currentOnline', (onlineData: number) => {
+            setOnline(onlineData)
         })
 
         return () => {
@@ -100,13 +105,13 @@ export default function Players() {
             </Table>
             <div className='grid grid-cols-12 gap-2 pt-3'>
                 <div className='col-span-4 flex justify-center items-center'>
-                    Online: 120
+                    Online: {online}
                 </div>
                 <div className='col-span-4 flex justify-center items-center'>
                     Playing: {players.length}
                 </div>
                 <div className='col-span-4 flex justify-center items-center'>
-                    Betting: {calculateBets()}
+                    Betting: {calculateBets()} bits
                 </div>
             </div>
         </>
