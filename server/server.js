@@ -30,9 +30,9 @@ const MAX_HISTORY = 20
 let currentMultiplier = -0.01
 let gameTime = -0.1
 let isPaused = false
-let interval = 75
+let interval = 60
 let waitingTime = 10
-let x = 0
+let x = 1.0
 
 let currentOnline = 350
 
@@ -283,7 +283,7 @@ const waitingForNewGame = () => {
         } else {
             currentGameMockIndex = 0
         }
-        x = 0
+        x = 1
         waitingTime = 10
         setTimeout(gameLoop, interval)
     } else {

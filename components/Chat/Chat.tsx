@@ -30,7 +30,7 @@ export default function Chat() {
     const formatTimestamp = (timestamp: string) => {
         const [hours, minutes] = timestamp.split(':')
 
-        return `${hours}:${parseInt(minutes) + 9}`
+        return `${hours}:${minutes}`
     }
 
     return (
