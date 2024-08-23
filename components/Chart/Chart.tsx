@@ -67,7 +67,7 @@ export const Chart = () => {
                     fontSize={60}
                     textAnchor='middle'
                     x='50%'
-                    y='60%'
+                    y='62%'
                 >
                     {'@ ' + firstItem.bust.toFixed(2) + 'x'}
                 </text>
